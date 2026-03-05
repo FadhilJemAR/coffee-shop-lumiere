@@ -14,12 +14,49 @@ const products: IProduct[] = [
   {
     name: "Mixed Cappucino",
     imageUrl: "/img/products/Cappucino.jpg",
-    description:"Dibuat dengan campuran biji kopi arabika dan robusta. Memiliki rasa yang pas sehingga enak dikonsumsi diujung hari",
+    description: "Dibuat dengan campuran biji kopi arabika dan robusta. Memiliki rasa yang pas sehingga enak dikonsumsi di ujung hari.",
     badge: {
       isBestSeller: true,
       rating: 4.5,
     },
   },
+  {
+    name: 'Original Espresso',
+    imageUrl: "/img/products/Espresso.jpg",
+    description: "Espresso dengan biji kopi arabika impor dari Yaman, memiliki rasa yang kuat, body yang tebal, dan aroma yang sangat autentik.",
+    badge: {
+      isBestSeller: true,
+      rating: 4.8,
+    },
+  },
+  // --- TAMBAHAN PRODUK BARU ---
+  {
+    name: "Velvet Latte",
+    imageUrl: "/img/products/Velvet-Latte.jpg",
+    description: "Perpaduan lembut susu *creamy* dengan *double shot* espresso. Tekstur *silky* yang memberikan ketenangan di setiap tegukan.",
+    badge: {
+      isBestSeller: true,
+      rating: 4.9,
+    },
+  },
+  {
+    name: "Classic Flat White",
+    imageUrl: "/img/products/Flat-White.jpg",
+    description: "Gaya khas kafe Melbourne dan London. Lapisan micro-foam tipis di atas espresso yang menonjolkan karakter asli biji kopi pilihan.",
+    badge: {
+      isBestSeller: true,
+      rating: 4.7,
+    },
+  },
+  {
+    name: "Cold Brew Artisan",
+    imageUrl: "/img/products/Cold-Brew.jpg",
+    description: "Kopi yang diseduh dingin selama 12 jam untuk menghasilkan rasa yang bersih, rendah asam, dan sentuhan rasa cokelat alami.",
+    badge: {
+      isBestSeller: true,
+      rating: 4.6,
+    },
+  }
 ];
 
 function ProductSection() {
