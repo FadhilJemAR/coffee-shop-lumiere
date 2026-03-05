@@ -14,7 +14,7 @@ interface IProductCardProps {
   product: IProduct;
 }
 
-function ProductCard({ product}: IProductCardProps) {
+function ProductCard({ product }: IProductCardProps) {
   const renderBadge = () => {
     if (product.badge) {
       const badge = product.badge;
@@ -35,17 +35,15 @@ function ProductCard({ product}: IProductCardProps) {
     }
   };
 
-  
-
   return (
     <article className="rounded-lg overflow-hidden h-90 w-60 ">
       <div className="h-40 rounded-lg relative overflow-hidden w-full">
         {renderBadge()}
         <Image
-          src={product.imageUrl} 
+          src={product.imageUrl}
           alt={product.name}
           fill={true}
-          style={{objectFit:'cover'}}
+          style={{ objectFit: "cover" }}
           loading="lazy"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
@@ -55,7 +53,9 @@ function ProductCard({ product}: IProductCardProps) {
       >
         {product.name}
       </span>
-      <p className={`${lora.className} text-sm min-h-25`}>{product.description}</p>
+      <p className={`${lora.className} text-sm min-h-25`}>
+        {product.description}
+      </p>
       <button className="rounded-2xl  text-sm  py-2 px-4 border border-black/80 hover:bg-black/80 hover:text-white duration-200 hover:cursor-pointer">
         Pesan Via WhatsApp
       </button>

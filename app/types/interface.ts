@@ -1,7 +1,7 @@
 export interface IProduct {
   name: string;
   imageUrl: string;
-  price:number;
+  price: number;
   description: string;
   badge?: {
     isBestSeller: boolean;
