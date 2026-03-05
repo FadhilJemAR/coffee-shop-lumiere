@@ -28,7 +28,7 @@ function HeaderNav() {
     >
       <div className="flex items-center gap-x-2">
         <Image
-          src={"/img/logo.png"}
+          src={`${isTransparent?'/img/logo.png':'/img/logo-black.png'}`}
           width={28}
           height={28}
           alt="Kopi Senja Logo"
