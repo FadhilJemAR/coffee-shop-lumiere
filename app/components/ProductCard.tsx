@@ -1,5 +1,6 @@
 import { Lora } from "next/font/google";
 import { Star, Crown } from "lucide-react";
+import { IProduct } from "../types/interface";
 
 const lora = Lora({
   weight: "400",
@@ -9,20 +10,35 @@ const loraSemibold = Lora({
   weight: "500",
 });
 
-function ProductCard() {
+interface IProductCardProps {
+  product: IProduct;
+}
+
+function ProductCard({ product }: IProductCardProps) {
+  const renderBadge = () => {
+    if (product.badge) {
+      const badge = product.badge;
+      return (
+        <div className="absolute bg-stone-800  text-white text-xs flex py-1 px-4  rounded-2xl left-4 top-4 items-center gap-x-2">
+          {badge.isBestSeller && (
+            <div className="flex items-center gap-x-[2px]">
+              <Crown size={14} />
+              <span>Terlaris</span>
+            </div>
+          )}
+          <div className="flex items-center gap-x-[2px]">
+            <Star size={13} fill="white" color="white" />
+            <span className="text-white">{badge.rating}</span>
+          </div>
+        </div>
+      );
+    }
+  };
+
   return (
     <article className="rounded-lg overflow-hidden h-90 w-60">
       <div className="h-40 rounded-lg relative overflow-hidden w-full">
-        <div className="absolute bg-stone-800  text-white text-xs flex py-1 px-3 w-35 rounded-2xl left-4 top-4 items-center gap-x-2">
-          <div className="flex items-center gap-x-[2px]">
-            <Crown size={14} />
-            <span>Terlaris</span>
-          </div>
-          <div className="flex items-center gap-x-[2px]">
-            <Star size={13} fill="white" color="white" />
-            <span className="text-white">4.5</span>
-          </div>
-        </div>
+        {renderBadge()}
         <img
           src={"/img/products/Cappucino.jpg"}
           className="h-40 w-full object-cover"
@@ -31,12 +47,9 @@ function ProductCard() {
       <span
         className={`${loraSemibold.className} text-lg font-bold inline-block mt-2`}
       >
-        Mixed Cappucino
+        {product.name}
       </span>
-      <p className={`${lora.className} text-sm`}>
-        Dibuat dengan campuran biji kopi arabika dan robusta. Memiliki rasa yang
-        pas sehingga enak dikonsumsi pagi hari
-      </p>
+      <p className={`${lora.className} text-sm`}>{product.description}</p>
       <button className="rounded-2xl text-sm mt-3 py-2 px-4 border border-black/80 hover:bg-black/80 hover:text-white duration-200 hover:cursor-pointer">
         Pesan Via WhatsApp
       </button>
