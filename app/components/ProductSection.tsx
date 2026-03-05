@@ -1,6 +1,9 @@
+'use client'
 import { IProduct } from "../types/interface";
 import ProductCard from "./ProductCard";
 import { Lora } from "next/font/google";
+import { ArrowDown } from "lucide-react";
+import { useState } from "react";
 
 const lora = Lora({
   weight: "400",
@@ -10,10 +13,11 @@ const loraSemibold = Lora({
   weight: "500",
 });
 
-const products: IProduct[] = [
+const superiorProducts: IProduct[] = [
   {
     name: "Mixed Cappucino",
     imageUrl: "/img/products/Cappucino.jpg",
+    price:25000,
     description: "Dibuat dengan campuran biji kopi arabika dan robusta. Memiliki rasa yang pas sehingga enak dikonsumsi di ujung hari.",
     badge: {
       isBestSeller: true,
@@ -22,6 +26,7 @@ const products: IProduct[] = [
   },
   {
     name: 'Original Espresso',
+    price:19000,
     imageUrl: "/img/products/Espresso.jpg",
     description: "Espresso dengan biji kopi arabika impor dari Yaman, memiliki rasa yang kuat, body yang tebal, dan aroma yang sangat autentik.",
     badge: {
@@ -32,6 +37,7 @@ const products: IProduct[] = [
   // --- TAMBAHAN PRODUK BARU ---
   {
     name: "Velvet Latte",
+    price:34000,
     imageUrl: "/img/products/Velvet-Latte.jpg",
     description: "Perpaduan lembut susu *creamy* dengan *double shot* espresso. Tekstur *silky* yang memberikan ketenangan di setiap tegukan.",
     badge: {
@@ -41,6 +47,7 @@ const products: IProduct[] = [
   },
   {
     name: "Classic Flat White",
+    price:22000,
     imageUrl: "/img/products/Flat-White.jpg",
     description: "Gaya khas kafe Melbourne dan London. Lapisan micro-foam tipis di atas espresso yang menonjolkan karakter asli biji kopi pilihan.",
     badge: {
@@ -50,6 +57,7 @@ const products: IProduct[] = [
   },
   {
     name: "Cold Brew Artisan",
+    price:18000,
     imageUrl: "/img/products/Cold-Brew.jpg",
     description: "Kopi yang diseduh dingin selama 12 jam untuk menghasilkan rasa yang bersih, rendah asam, dan sentuhan rasa cokelat alami.",
     badge: {
@@ -59,7 +67,50 @@ const products: IProduct[] = [
   }
 ];
 
+const otherProducts: IProduct[] = [
+  {
+    name: "Piccolo Latte",
+    price: 28000,
+    imageUrl: "/img/products/Piccolo-Latte.jpg",
+    description: "Ristretto shot yang kuat dengan sedikit susu panas, menghasilkan rasa kopi yang intens namun tetap lembut.",
+    badge: { isBestSeller: false, rating: 4.7 }
+  },
+  {
+    name: "Caramel Macchiato",
+    price: 38000,
+    imageUrl: "/img/products/Caramel-Macchiato.jpg",
+    description: "Espresso dengan sirup vanila dan susu, diakhiri dengan saus karamel di atas busa susu yang tebal.",
+    badge: { isBestSeller: true, rating: 4.8 }
+  },
+  {
+    name: "Original Affogato",
+    price: 32000,
+    imageUrl: "/img/products/Original-Affogato.jpg",
+    description: "Satu *scoop* gelato vanila premium yang disiram dengan satu *shot* espresso panas yang kaya rasa.",
+    badge: { isBestSeller: false, rating: 4.9 }
+  },
+  {
+    name: "Mocha Praline",
+    price: 42000,
+    imageUrl: "/img/products/Moccha-Praline.jpg",
+    description: "Perpaduan harmonis antara espresso, cokelat hitam, dan sentuhan kacang hazelnut panggang.",
+    badge: { isBestSeller: false, rating: 4.6 }
+  },
+  {
+    name: "Matcha Espresso",
+    price: 40000,
+    imageUrl: "/img/products/Matcha-Espresso.jpg",
+    description: "Perpaduan unik antara teh hijau matcha premium dari Jepang dengan espresso arabika pilihan.",
+    badge: { isBestSeller: false, rating: 4.7 }
+  }
+];
 function ProductSection() {
+  const [products,setProducts] = useState<IProduct[]>(superiorProducts);
+
+  const seeOtherProducts = ()=>{
+    setProducts(prev=>[...prev,...otherProducts]);
+  }
+
   return (
     <section className="p-13">
       <div>
@@ -74,6 +125,15 @@ function ProductSection() {
         {products.map((product: IProduct, index: number) => {
           return <ProductCard product={product} key={index} />;
         })}
+      </div>
+      <div className="flex justify-center gap-x-2 text-black text-sm mt-8">
+         <button className=" w-10 h-10  bg-black/80 text-white  hover:cursor-pointer">
+            1
+         </button>
+         <button className="px-4 border hover:cursor-pointer duration-200  flex items-center gap-x-2" onClick={seeOtherProducts}>
+           <span>Produk lainnya</span>
+           <ArrowDown size={18}/>
+         </button>
       </div>
     </section>
   );

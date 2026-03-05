@@ -1,7 +1,7 @@
 import { Lora } from "next/font/google";
 import { Star, Crown } from "lucide-react";
 import { IProduct } from "../types/interface";
-
+import Image from "next/image";
 const lora = Lora({
   weight: "400",
 });
@@ -39,10 +39,14 @@ function ProductCard({ product }: IProductCardProps) {
     <article className="rounded-lg overflow-hidden h-90 w-60 ">
       <div className="h-40 rounded-lg relative overflow-hidden w-full">
         {renderBadge()}
-        <img
-          src={product.imageUrl}
-          className="h-40 w-full object-cover"
-        ></img>
+        <Image
+          src={product.imageUrl} 
+          alt={product.name}
+          fill={true}
+          style={{objectFit:'cover'}}
+          loading="lazy"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
       </div>
       <span
         className={`${loraSemibold.className} text-lg font-bold inline-block mt-2`}
