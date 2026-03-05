@@ -14,7 +14,7 @@ interface IProductCardProps {
   product: IProduct;
 }
 
-function ProductCard({ product }: IProductCardProps) {
+function ProductCard({ product}: IProductCardProps) {
   const renderBadge = () => {
     if (product.badge) {
       const badge = product.badge;
@@ -34,6 +34,8 @@ function ProductCard({ product }: IProductCardProps) {
       );
     }
   };
+
+  
 
   return (
     <article className="rounded-lg overflow-hidden h-90 w-60 ">

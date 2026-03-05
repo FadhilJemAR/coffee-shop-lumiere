@@ -4,6 +4,7 @@ import ProductCard from "./ProductCard";
 import { Lora } from "next/font/google";
 import { ArrowDown, ArrowUp } from "lucide-react";
 import { useState } from "react";
+import { AnimatePresence ,motion} from "framer-motion";
 
 const lora = Lora({
   weight: "400",
@@ -104,17 +105,26 @@ const otherProducts: IProduct[] = [
   }
 ];
 
-function ProductSection() {
-  const [products,setProducts] = useState<IProduct[]>(superiorProducts);
-  const [seesOther,setSeesOther] = useState<boolean>(false);
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+  },
+  exit: { 
+    opacity: 0, 
+    scale: 0.95, 
+  }
+};
 
+function ProductSection() {
+  const [seesOther,setSeesOther] = useState<boolean>(false);
   const seeOtherProducts = ()=>{
     setSeesOther(true);
-    setProducts(prev=>[...prev,...otherProducts]);
+   
   }
   const hideOtherProducst = ()=>{
     setSeesOther(false);
-    setProducts(superiorProducts);
   }
 
   return (
@@ -127,10 +137,34 @@ function ProductSection() {
           Ayo jelajahi produk kami
         </h3>
       </div>
-      <div className="flex flex-wrap mt-6 gap-6">
-        {products.map((product: IProduct, index: number) => {
-          return <ProductCard product={product} key={index} />;
+      <div className="grid grid-cols-5 mt-6 gap-6">
+        {superiorProducts.map((product: IProduct, index: number) => {
+          return (
+            <div key={index}>
+              <ProductCard product={product} />
+            </div>
+        )
         })}
+
+        <AnimatePresence>
+          {seesOther && 
+            otherProducts.map((product:IProduct,index:number)=>{
+              return(
+                <motion.div 
+                  key={index}
+                  variants={itemVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  layout
+
+                >
+                  <ProductCard product={product} />
+                </motion.div>
+              ) 
+            })
+          }
+        </AnimatePresence>
       </div>
       <div className="flex justify-center gap-x-2 h-10 text-black text-sm mt-8">
          <button className="px-4 border hover:cursor-pointer duration-200  flex items-center gap-x-2" onClick={seesOther?hideOtherProducst:seeOtherProducts}>
