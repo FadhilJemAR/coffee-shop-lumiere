@@ -19,7 +19,7 @@ function ProductCard({ product }: IProductCardProps) {
     if (product.badge) {
       const badge = product.badge;
       return (
-        <div className="absolute bg-stone-800  text-white text-xs flex py-1 px-4  rounded-2xl left-4 top-4 items-center gap-x-2">
+        <div className="absolute bg-stone-800 z-2 text-white text-xs flex py-1 px-4  rounded-2xl left-4 top-4 items-center gap-x-2">
           {badge.isBestSeller && (
             <div className="flex items-center gap-x-[2px]">
               <Crown size={14} />

@@ -2,7 +2,7 @@
 import { IProduct } from "../types/interface";
 import ProductCard from "./ProductCard";
 import { Lora } from "next/font/google";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ArrowUp } from "lucide-react";
 import { useState } from "react";
 
 const lora = Lora({
@@ -106,9 +106,15 @@ const otherProducts: IProduct[] = [
 
 function ProductSection() {
   const [products,setProducts] = useState<IProduct[]>(superiorProducts);
+  const [seesOther,setSeesOther] = useState<boolean>(false);
 
   const seeOtherProducts = ()=>{
+    setSeesOther(true);
     setProducts(prev=>[...prev,...otherProducts]);
+  }
+  const hideOtherProducst = ()=>{
+    setSeesOther(false);
+    setProducts(superiorProducts);
   }
 
   return (
@@ -126,13 +132,10 @@ function ProductSection() {
           return <ProductCard product={product} key={index} />;
         })}
       </div>
-      <div className="flex justify-center gap-x-2 text-black text-sm mt-8">
-         <button className=" w-10 h-10  bg-black/80 text-white  hover:cursor-pointer">
-            1
-         </button>
-         <button className="px-4 border hover:cursor-pointer duration-200  flex items-center gap-x-2" onClick={seeOtherProducts}>
-           <span>Produk lainnya</span>
-           <ArrowDown size={18}/>
+      <div className="flex justify-center gap-x-2 h-10 text-black text-sm mt-8">
+         <button className="px-4 border hover:cursor-pointer duration-200  flex items-center gap-x-2" onClick={seesOther?hideOtherProducst:seeOtherProducts}>
+           <span>{seesOther?'Lihat lebih sedikit':'Selengkapnya'}</span>
+           {seesOther?<ArrowUp size={18}/>:<ArrowDown size={18}/>}
          </button>
       </div>
     </section>
