@@ -1,6 +1,7 @@
 'use client'
 import { Playfair_Display } from "next/font/google";
 import { useEffect,useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 const playfairDisplay = Playfair_Display({
   variable: "--playfair-display",
@@ -33,14 +34,14 @@ function HeaderNav() {
           height={28}
           alt="Kopi Senja Logo"
         />
-        <h1 className={` text-xl`}>Kopi Senja</h1>
+        <h1 className={`text-xl`}>Kopi Senja</h1>
       </div>
       <nav className="mr-14">
         <ul className="flex justify-between gap-x-6 ">
-          <li>Beranda</li>
-          <li>Kopi</li>
-          <li>Tentang</li>
-          <li>Kontak</li>
+          <li className="underline decoration-transparent decoration-[2px]  hover:decoration-inherit underline-offset-4 hover:underline-offset-8 duration-200"><Link href={'#hero'}>Beranda</Link></li>
+          <li className="underline decoration-transparent decoration-[2px] hover:decoration-inherit underline-offset-4 hover:underline-offset-8 duration-200"><Link href={'#product'}>Kopi</Link></li>
+          <li className="underline decoration-transparent decoration-[2px] hover:decoration-inherit underline-offset-4 hover:underline-offset-8 duration-200"><Link href={'#about'}>Tentang</Link></li>
+          <li className="underline decoration-transparent decoration-[2px] hover:decoration-inherit underline-offset-4 hover:underline-offset-8 duration-200"><Link href={'#contact'}>Kontak</Link></li>
         </ul>
       </nav>
     </header>

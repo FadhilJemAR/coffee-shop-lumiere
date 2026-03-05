@@ -9,6 +9,7 @@ const playfairDisplay = Playfair_Display({
 function HeroSection() {
   return (
     <section
+      id="hero"
       className={
         "w-full relative before:bg-[url(/img/coffee-beans.jpg)] h-160 before:absolute before:inset-0 before:opacity-35 before:bg-cover before:before:bg-no-repeat "
       }
