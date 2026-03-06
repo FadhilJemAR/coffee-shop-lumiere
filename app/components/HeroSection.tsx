@@ -1,6 +1,6 @@
 'use client'
 import { Playfair_Display } from "next/font/google";
-
+import Link from "next/link";
 const playfairDisplay = Playfair_Display({
   variable: "--playfair-display",
   subsets: ["latin"],
@@ -24,9 +24,13 @@ function HeroSection() {
           Nikmati secangkir kopi dengan berbagai varian di waktu senja
         </h2>
         <button
-          className={`duration-200 bg-transparent hover:bg-white border-white border ${playfairDisplay.className} hover:text-black text-white rounded-2xl p-3 px-9 mt-6 hover:cursor-pointer`}
+          className={`duration-200 bg-transparent active:bg-white active:text-black hover:bg-white border-white border ${playfairDisplay.className} hover:text-black text-white rounded-2xl p-3 px-9 mt-6 hover:cursor-pointer`}
         >
-          Lihat kopi
+          <a
+            href={'#product'}
+          >
+            Lihat kopi
+          </a>
         </button>
       </div>
     </section>
