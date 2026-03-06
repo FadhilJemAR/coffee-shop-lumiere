@@ -21,7 +21,7 @@ function HeroSection() {
         <h2
           className={`text-white text-2xl lg:text-4xl  text-center ${playfairDisplay.className}`}
         >
-          Nikmati secangkir kopi dengan berbagai varian di waktu senja
+          Nikmati pengalaman kopi premium dengan teknik brewing kelas dunia di jantung kota.
         </h2>
         <button
           className={`duration-200 bg-transparent active:bg-white active:text-black hover:bg-white border-white border ${playfairDisplay.className} hover:text-black text-white rounded-2xl p-3 px-9 mt-6 hover:cursor-pointer`}

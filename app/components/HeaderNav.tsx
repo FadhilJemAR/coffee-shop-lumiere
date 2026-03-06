@@ -37,7 +37,7 @@ function HeaderNav() {
             height={28}
             alt="Kopi Senja Logo"
           />
-          <h1 className={`text-xl`}>Kopi Senja</h1>
+          <h1 className={`text-xl`}>Lumière Coffee</h1>
         </div>
         <nav className="mr-14 hidden md:block">
           <ul className="flex justify-between gap-x-6 ">

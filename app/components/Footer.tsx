@@ -22,7 +22,7 @@ function Footer() {
           {/* Brand & Social */}
           <div className="space-y-4">
             <h2 className={`${playfairDisplay.className} font-serif text-3xl`}>
-              Kopi Senja
+               Lumière Coffee
             </h2>
             <p className="text-sm text-gray-400">
               Membawa tradisi kopi Eropa ke setiap gelas Anda di jantung kota.
@@ -73,7 +73,7 @@ function Footer() {
             <ul className="space-y-4 text-gray-400 text-sm">
               <li>Alamat anda</li>
               <li>+62 123 564 893</li>
-              <li>hello@kopisenja.com</li>
+              <li>hello@LumiereCoffee.com</li>
             </ul>
           </div>
 
@@ -94,7 +94,7 @@ function Footer() {
         </div>
 
         <div className="pt-8 text-center text-xs text-gray-500">
-          &copy; {new Date().getFullYear()} Kopi Senja. All rights reserved.
+          &copy; {new Date().getFullYear()} Lumière Coffee. All rights reserved.
         </div>
       </div>
     </footer>

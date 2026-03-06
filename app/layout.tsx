@@ -13,9 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kopi Senja",
-  description:
-    "Nikmati secangkir kopi dengan berbagai variasi sambil menikmati senja",
+  title: "Lumière Coffee",
+  description:"Nikmati pengalaman kopi premium dengan teknik brewing kelas dunia di jantung kota. Tempat di mana rasa, aroma, dan ketenangan bertemu dalam satu cangkir.",
   icons:'/img/logo-black.png'
 };
 
