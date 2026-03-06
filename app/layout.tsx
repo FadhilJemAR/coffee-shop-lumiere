@@ -16,6 +16,12 @@ export const metadata: Metadata = {
   title: "Lumière Coffee",
   description:"Nikmati pengalaman kopi premium dengan teknik brewing kelas dunia di jantung kota. Tempat di mana rasa, aroma, dan ketenangan bertemu dalam satu cangkir.",
   icons:'/img/logo-black.png',
+  keywords:['toko kopi','lumiere coffee','kopi','coffee shop','warung kopi','kafe','cappucino'],
+  openGraph: {
+    title: 'Lumière Coffee',
+    description: 'Menemukan Cahaya dalam Setiap Seduhan.',
+    images: ['/img/coffee-shop.jpg'], // Siapin gambar keren buat preview pas dishare di WA/Sosmed
+  },
 };
 
 export default function RootLayout({
