@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Lumière Coffee",
   description:"Nikmati pengalaman kopi premium dengan teknik brewing kelas dunia di jantung kota. Tempat di mana rasa, aroma, dan ketenangan bertemu dalam satu cangkir.",
-  icons:'/img/logo-black.png'
+  icons:'/img/logo-black.png',
 };
 
 export default function RootLayout({
@@ -28,6 +28,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <head>
+          <meta name="google-site-verification" content="bsaN2flAfEThgtAGGkHNib41lRWtQEz0DofkjoF-Pmk" />
+        </head>
         {children}
       </body>
     </html>
