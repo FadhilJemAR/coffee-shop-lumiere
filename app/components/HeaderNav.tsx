@@ -41,7 +41,7 @@ function HeaderNav() {
           <li className="underline decoration-transparent decoration-[2px]  hover:decoration-inherit underline-offset-4 hover:underline-offset-8 duration-200"><Link href={'#hero'}>Beranda</Link></li>
           <li className="underline decoration-transparent decoration-[2px] hover:decoration-inherit underline-offset-4 hover:underline-offset-8 duration-200"><Link href={'#product'}>Kopi</Link></li>
           <li className="underline decoration-transparent decoration-[2px] hover:decoration-inherit underline-offset-4 hover:underline-offset-8 duration-200"><Link href={'#about'}>Tentang</Link></li>
-          <li className="underline decoration-transparent decoration-[2px] hover:decoration-inherit underline-offset-4 hover:underline-offset-8 duration-200"><Link href={'#contact'}>Kontak</Link></li>
+          <li className="underline decoration-transparent decoration-[2px] hover:decoration-inherit underline-offset-4 hover:underline-offset-8 duration-200"><Link href={'#footer'}>Kontak</Link></li>
         </ul>
       </nav>
     </header>

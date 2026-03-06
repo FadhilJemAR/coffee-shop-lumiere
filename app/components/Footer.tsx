@@ -1,14 +1,26 @@
 import Link from "next/link"
+import {Lora,Playfair_Display} from 'next/font/google'
+
+const playfairDisplay = Playfair_Display({
+  variable: "--playfair-display",
+  subsets: ["latin"],
+});
+
+const lora =Lora({
+  variable: "--lora",
+  subsets: ["latin"],
+});
+
 
 function  Footer (){
     return(
-        <footer className="bg-black/80 text-[#fdfaf7] py-16">
+        <footer className={`bg-black/80 text-[#fdfaf7] py-16 ${lora.className}`} id="footer">
   <div className="max-w-7xl mx-auto px-4">
     <div className="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-12">
       
       {/* Brand & Social */}
       <div className="space-y-4">
-        <h2 className="font-serif text-3xl">Kopi Senja</h2>
+        <h2 className={`${playfairDisplay.className} font-serif text-3xl`}>Kopi Senja</h2>
         <p className="text-sm text-gray-400">Membawa tradisi kopi Eropa ke setiap gelas Anda di jantung kota.</p>
         <div className="flex gap-4">
           {/* Icon Sosmed bisa ditaruh di sini */}
