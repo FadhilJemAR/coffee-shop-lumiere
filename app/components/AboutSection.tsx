@@ -30,7 +30,8 @@ function AboutSection(){
             src="/img/coffee-shop.jpg" 
             alt="Suasana Cafe" 
             fill 
-            className="object-cover"
+            sizes="500px"
+            style={{objectFit:'cover'}}
           />
         </motion.div>
 
