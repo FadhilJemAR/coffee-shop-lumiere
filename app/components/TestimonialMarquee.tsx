@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { testimonials } from "../data/dummy";
 
-
-
 export default function TestimonialMarquee() {
   return (
     <div className="py-10 my-4  overflow-hidden whitespace-nowrap flex">
@@ -19,14 +17,20 @@ export default function TestimonialMarquee() {
       >
         {/* Render pertama */}
         {testimonials.map((text, index) => (
-          <span key={index} className=" text-xl font-serif mx-10 flex items-center">
+          <span
+            key={index}
+            className=" text-xl font-serif mx-10 flex items-center"
+          >
             <span className="text-amber-400 mr-4">★</span> {text}
           </span>
         ))}
-        
+
         {/* Duplikasi untuk efek infinite (biar gak putus) */}
         {testimonials.map((text, index) => (
-          <span key={`dup-${index}`} className=" text-xl font-serif mx-10 flex items-center">
+          <span
+            key={`dup-${index}`}
+            className=" text-xl font-serif mx-10 flex items-center"
+          >
             <span className="text-amber-400 mr-4">★</span> {text}
           </span>
         ))}

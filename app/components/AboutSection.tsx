@@ -1,6 +1,6 @@
-'use client'
-import { Playfair_Display,Lora } from "next/font/google";
-import {motion} from 'framer-motion';
+"use client";
+import { Playfair_Display, Lora } from "next/font/google";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import TestimonialMarquee from "./TestimonialMarquee";
 const playfairDisplay = Playfair_Display({
@@ -8,35 +8,34 @@ const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
 });
 
-const lora =Lora({
+const lora = Lora({
   variable: "--lora",
   subsets: ["latin"],
 });
 
-function AboutSection(){
-   return (
+function AboutSection() {
+  return (
     <section className={`py-26 ${lora.className} overflow-x-hidden`} id="about">
       <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
-        
         {/* Sisi Kiri: Foto Estetik */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl"
         >
-          <Image 
-            src="/img/coffee-shop.jpg" 
-            alt="Suasana Cafe" 
-            fill 
+          <Image
+            src="/img/coffee-shop.jpg"
+            alt="Suasana Cafe"
+            fill
             sizes="500px"
-            style={{objectFit:'cover'}}
+            style={{ objectFit: "cover" }}
           />
         </motion.div>
 
         {/* Sisi Kanan: Teks Cerita */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -45,19 +44,24 @@ function AboutSection(){
           <h4 className="text-gray-600 font-sans font-semibold tracking-widest uppercase text-sm mb-4">
             Our Story
           </h4>
-          <h2 className={`text-4xl md:text-5xl font-serif leading-tight ${playfairDisplay.className} mb-6`}>
+          <h2
+            className={`text-4xl md:text-5xl font-serif leading-tight ${playfairDisplay.className} mb-6`}
+          >
             Membawa Tradisi Kopi Eropa ke Gelas Anda
           </h2>
           <p className={`text-gray-600 leading-relaxed mb-8 `}>
-            Setiap biji kopi yang kami pilih memiliki cerita. Dari perkebunan tinggi di Ethiopia hingga teknik roasting presisi di Milan, kami memastikan setiap tetes espresso yang sampai ke meja Anda adalah sebuah mahakarya.
+            Setiap biji kopi yang kami pilih memiliki cerita. Dari perkebunan
+            tinggi di Ethiopia hingga teknik roasting presisi di Milan, kami
+            memastikan setiap tetes espresso yang sampai ke meja Anda adalah
+            sebuah mahakarya.
           </p>
-          
+
           <div className="grid grid-cols-3 gap-6 mb-10">
             <div>
               <h5 className="font-bold text-2xl font-serif">65%</h5>
               <p className="text-sm text-gray-500">Arabica Beans</p>
             </div>
-             <div>
+            <div>
               <h5 className="font-bold text-2xl font-serif">35%</h5>
               <p className="text-sm text-gray-500">Other Beans</p>
             </div>
@@ -72,9 +76,9 @@ function AboutSection(){
           </button>
         </motion.div>
       </div>
-      <TestimonialMarquee/>
+      <TestimonialMarquee />
     </section>
-   )
+  );
 }
 
-export default AboutSection
+export default AboutSection;

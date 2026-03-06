@@ -1,6 +1,6 @@
 "use client";
 import { IProduct } from "../types/interface";
-import { superiorProducts,otherProducts } from "../data/dummy";
+import { superiorProducts, otherProducts } from "../data/dummy";
 import ProductCard from "./ProductCard";
 import { Lora } from "next/font/google";
 import { ArrowDown, ArrowUp } from "lucide-react";
@@ -37,7 +37,10 @@ function ProductSection() {
   };
 
   return (
-    <section className="sm:p-13 p-10 scroll-mt-20 overflow-x-hidden" id="product">
+    <section
+      className="sm:p-13 p-10 scroll-mt-20 overflow-x-hidden"
+      id="product"
+    >
       <div>
         <h2 className={`text-center text-2xl ${loraSemibold.className}`}>
           Produk unggulan kami
