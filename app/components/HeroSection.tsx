@@ -14,12 +14,12 @@ function HeroSection() {
         "w-full relative before:bg-[url(/img/coffee-beans.jpg)] h-160 before:absolute before:inset-0 before:opacity-35 before:bg-cover before:before:bg-no-repeat "
       }
     >
-      <div className="bg-black/70 absolute inset-0 px-50 flex flex-col justify-center items-center">
-        <span className={`text-white  ${playfairDisplay.className}`}>
+      <div className="bg-black/70 absolute inset-0 px-5 lg:px-30 flex flex-col justify-center items-center">
+        <span className={`text-white lg:text-lg ${playfairDisplay.className}`}>
           Buat dirimu jadi lebih berenergi
         </span>
         <h2
-          className={`text-white text-4xl  text-center ${playfairDisplay.className}`}
+          className={`text-white text-2xl lg:text-4xl  text-center ${playfairDisplay.className}`}
         >
           Nikmati secangkir kopi dengan berbagai varian di waktu senja
         </h2>

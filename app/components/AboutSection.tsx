@@ -15,7 +15,7 @@ const lora =Lora({
 
 function AboutSection(){
    return (
-    <section className={`py-26 ${lora.className} `} id="about">
+    <section className={`py-26 ${lora.className} overflow-x-hidden`} id="about">
       <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
         
         {/* Sisi Kiri: Foto Estetik */}
