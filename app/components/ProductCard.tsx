@@ -36,7 +36,7 @@ function ProductCard({ product }: IProductCardProps) {
   };
 
   return (
-    <article className="rounded-lg overflow-hidden h-95 w-40 sm:w-60 ">
+    <article className="rounded-lg overflow-hidden pb-4 w-40 sm:w-55 ">
       <div className="h-40 rounded-lg relative overflow-hidden w-full">
         {renderBadge()}
         <Image

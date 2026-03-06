@@ -38,7 +38,7 @@ function ProductSection() {
 
   return (
     <section
-      className="sm:p-13 p-10 scroll-mt-20 overflow-x-hidden"
+      className="sm:p-13 p-13 scroll-mt-20 overflow-x-hidden"
       id="product"
     >
       <div>
@@ -49,7 +49,7 @@ function ProductSection() {
           Ayo jelajahi produk kami
         </h3>
       </div>
-      <div className="grid  grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-6 gap-6 content-center">
+      <div className="grid  grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-6 gap-8 ">
         {superiorProducts.map((product: IProduct, index: number) => {
           return (
             <div key={index}>
