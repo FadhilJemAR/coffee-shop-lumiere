@@ -36,7 +36,7 @@ function ProductCard({ product }: IProductCardProps) {
   };
 
   return (
-   <article className="rounded-lg overflow-hidden h-95 w-60 ">
+   <article className="rounded-lg overflow-hidden h-95 w-40 sm:w-60 ">
   <div className="h-40 rounded-lg relative overflow-hidden w-full">
     {renderBadge()}
     <Image
@@ -49,11 +49,11 @@ function ProductCard({ product }: IProductCardProps) {
     />
   </div>
   
-  <span className={`${loraSemibold.className} text-lg font-bold inline-block mt-2`}>
+  <span className={`${loraSemibold.className} sm:text-lg  font-bold inline-block mt-2`}>
     {product.name}
   </span>
   
-  <p className={`${lora.className} text-sm min-h-25`}>
+  <p className={`${lora.className} sm:text-sm text-xs min-h-25`}>
     {product.description}
   </p>
 
@@ -66,7 +66,7 @@ function ProductCard({ product }: IProductCardProps) {
     }).format(product.price)}
   </span>
 
-  <button className="rounded-2xl text-sm py-2 px-4 border border-black/80 hover:bg-black/80 hover:text-white duration-200 hover:cursor-pointer">
+  <button className="rounded-2xl text-xs md:text-sm py-2 px-4 border border-black/80 hover:bg-black/80 hover:text-white duration-200 hover:cursor-pointer">
     Pesan Via WhatsApp
   </button>
 </article>

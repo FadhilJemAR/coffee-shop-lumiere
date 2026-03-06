@@ -37,7 +37,7 @@ function ProductSection() {
   };
 
   return (
-    <section className="p-13 scroll-mt-20" id="product">
+    <section className="sm:p-13 p-10 scroll-mt-20" id="product">
       <div>
         <h2 className={`text-center text-2xl ${loraSemibold.className}`}>
           Produk unggulan kami
@@ -46,7 +46,7 @@ function ProductSection() {
           Ayo jelajahi produk kami
         </h3>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-6 gap-6">
+      <div className="grid  grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-6 gap-6 content-center">
         {superiorProducts.map((product: IProduct, index: number) => {
           return (
             <div key={index}>
