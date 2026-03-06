@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: "Kopi Senja",
   description:
     "Nikmati secangkir kopi dengan berbagai variasi sambil menikmati senja",
+  icons:'/img/logo-black.png'
 };
 
 export default function RootLayout({
