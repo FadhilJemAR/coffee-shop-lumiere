@@ -1,12 +1,7 @@
 import { motion } from "framer-motion";
+import { testimonials } from "../data/dummy";
 
-const testimonials = [
-  "\"Kopinya juara, vibe-nya dapet banget!\" - Fadhil",
-  "\"Espresso terbaik yang pernah saya coba.\" - Elon",
-  "\"Baristanya ramah, tempatnya nyaman buat WfH.\" - Budi",
-  "\"Berasa lagi ngopi di Paris, keren!\" - Jemima",
-  "\"Wajib coba Matcha Espresso-nya, unik!\" - Rizky",
-];
+
 
 export default function TestimonialMarquee() {
   return (
