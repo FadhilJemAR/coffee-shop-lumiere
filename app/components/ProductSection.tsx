@@ -37,7 +37,7 @@ function ProductSection() {
   };
 
   return (
-    <section className="sm:p-13 p-10 scroll-mt-20" id="product">
+    <section className="sm:p-13 p-10 scroll-mt-20 overflow-x-hidden" id="product">
       <div>
         <h2 className={`text-center text-2xl ${loraSemibold.className}`}>
           Produk unggulan kami
