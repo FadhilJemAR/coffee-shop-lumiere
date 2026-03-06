@@ -2,6 +2,7 @@
 import { Playfair_Display,Lora } from "next/font/google";
 import {motion} from 'framer-motion';
 import Image from "next/image";
+import TestimonialMarquee from "./TestimonialMarquee";
 const playfairDisplay = Playfair_Display({
   variable: "--playfair-display",
   subsets: ["latin"],
@@ -70,6 +71,7 @@ function AboutSection(){
           </button>
         </motion.div>
       </div>
+      <TestimonialMarquee/>
     </section>
    )
 }
